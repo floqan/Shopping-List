@@ -12,6 +12,9 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.shopping_list.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;

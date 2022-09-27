@@ -1,16 +1,16 @@
-package com.example.shopping_list.ui.dashboard;
+package com.example.shopping_list.ui.recipes;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class recipesViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public recipesViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is recipes fragment");
     }
 
     public LiveData<String> getText() {

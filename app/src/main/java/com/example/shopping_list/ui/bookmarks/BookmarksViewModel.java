@@ -1,14 +1,14 @@
-package com.example.shopping_list.ui.home;
+package com.example.shopping_list.ui.bookmarks;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class BookmarksViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public BookmarksViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is home fragment");
     }
