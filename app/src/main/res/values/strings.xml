@@ -3,4 +3,10 @@
     <string name="title_bookmarks">Merkliste</string>
     <string name="title_shopping_list">Einkaufsliste</string>
     <string name="title_recipes">Rezepte</string>
+    <string name="addToShoppingList">Zur Einkaufsliste hinzufügen</string>
+    <string name="app_not_found">Keine passende App gefunden</string>
+    <string name="title_activity_test_nav_bar">TestNavBar</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

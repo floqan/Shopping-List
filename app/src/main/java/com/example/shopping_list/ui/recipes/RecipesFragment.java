@@ -4,34 +4,37 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ExpandableListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.example.shopping_list.databinding.FragmentRecipesBinding;
+import com.example.shopping_list.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RecipesFragment extends Fragment {
 
-    private FragmentRecipesBinding binding;
+    public RecipesFragment() {
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        recipesViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(recipesViewModel.class);
 
-        binding = FragmentRecipesBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        List<Recipe> recipes = new ArrayList<>();
+        recipes.add(new Recipe().withTitle("Rezept 1").withLink("www.google.com").withIngredients("2 Zwiebeln \n 3 Karotten").withDescription("Alles mischen"));
+        recipes.add(new Recipe().withTitle("Rezept 2").withLink("www.9gag.com").withIngredients("5 Memes \n 9 Gag").withDescription("Anschauen"));
 
-        final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
-    }
+        View contentView = inflater.inflate(R.layout.fragment_recipes, container, false);
+        ExpandableListView listView = contentView.findViewById(R.id.recipeListView);
+        listView.setAdapter(new RecipesListAdapter(getContext(), recipes));
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+        // binding = FragmentRecipesBinding.inflate(inflater, container, false);
+        // View root = binding.getRoot();
+
+        // final TextView textView = binding.textNotifications;
+        // notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        return contentView;
     }
 }
